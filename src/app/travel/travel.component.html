@@ -1,0 +1,37 @@
+<!-- <main> -->
+  <section id="pra-onde-section">
+    <mat-form-field class="pra-onde-field">
+      <mat-label>Pra onde iremos dessa vez?</mat-label>
+      <mat-chip-grid #chipGrid aria-label="Enter fruits">
+        @for (characteristic of characteristics; track characteristic) {
+          <mat-chip-row
+            (removed)="remove(characteristic)"
+            [editable]="true"
+            (edited)="edit(characteristic, $event)"
+            [aria-description]="'press enter to edit ' + characteristic">
+            {{characteristic}}
+            <button matChipRemove [attr.aria-label]="'remove ' + characteristic">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        }
+        <input placeholder="Palavra-chave"
+               [matChipInputFor]="chipGrid"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)"/>
+        <button class="clear-btn" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-chip-grid>
+    </mat-form-field>
+    <button class="search-btn" mat-raised-button color="primary" (click)="search()">
+      <mat-icon>flight_takeoff</mat-icon>
+      Buscar
+    </button>
+  </section>
+
+  <section id="destinos-section">
+    <app-destinos [destinos]="travels"></app-destinos>
+  </section>
+<!-- </main> -->

@@ -1,0 +1,16 @@
+:host{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 32%;
+}
+
+.mat-mdc-card-title{
+  color: white;
+}
+
+.mat-mdc-card-content{
+  color: white;
+}

@@ -1,0 +1,16 @@
+h1{
+  color: white;
+  text-align: center;
+  margin: 120px 0px;
+  font-size: xxx-large;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px #323131;
+}
+
+span:nth-child(1) {
+  color: green;
+}
+
+span:nth-child(3) {
+  color: red;
+}

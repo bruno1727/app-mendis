@@ -1,0 +1,42 @@
+:host{
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  flex-flow: wrap;
+}
+
+.pra-onde-field {
+  width: 100%;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+button.search-btn{
+  width: 200px;
+  margin: 5px;
+}
+
+button.clear-btn{
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+}
+
+button.clear-btn .mat-icon{
+  font-size: 20px;
+  position: relative;
+  top: 4px;
+  color: #b7b7b7;
+}
+
+section#pra-onde-section{
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section#destinos-section{
+  width: 100%;
+}
