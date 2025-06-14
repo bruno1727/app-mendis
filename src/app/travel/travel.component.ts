@@ -9,11 +9,12 @@ import { TravelService } from './services/travel.service';
 import { TravelRequest } from './models/travel.request';
 import { TravelResponse } from './models/travel.response';
 import { DestinosComponent } from './destinos/destinos.component'
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-travel',
   standalone: true,
-  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, DestinosComponent],
+  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, DestinosComponent, MatTooltipModule],
   templateUrl: './travel.component.html',
   styleUrl: './travel.component.css',
 })
@@ -22,6 +23,14 @@ export class TravelComponent {
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   characteristics: string[] = [];
   travels: TravelResponse[] = [];
+
+  country: string = '';
+  countries = [
+    { name: 'Brasil', icon: 'flag' },
+    { name: 'México', icon: 'flag' },
+    { name: 'Argentina', icon: 'flag' },
+    { name: 'Itália', icon: 'flag' }
+  ];
 
   announcer = inject(LiveAnnouncer);
 
@@ -66,7 +75,11 @@ export class TravelComponent {
   }
 
   search(){
-    this.service.search({characteristics: this.characteristics} as TravelRequest).subscribe(data => {
+    this.service.search(
+      {
+        country: this.country,
+        characteristics: this.characteristics
+      } as TravelRequest).subscribe(data => {
       this.travels = data;
     });
   }

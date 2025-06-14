@@ -40,3 +40,14 @@ section#pra-onde-section{
 section#destinos-section{
   width: 100%;
 }
+
+.country-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  margin-right: 1px;
+}

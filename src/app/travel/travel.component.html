@@ -1,4 +1,22 @@
 <!-- <main> -->
+  <section id="country-section">
+    <span class="country-label">
+      <mat-icon style="vertical-align: middle; margin-right: 6px; color: #1976d2;">public</mat-icon>
+      Escolha o país:
+    </span>
+    @for (c of countries; track c) {
+      <button mat-stroked-button
+            
+            [color]="country === c.name ? 'primary' : undefined"
+            (click)="country = c.name"
+            [class.selected]="country === c.name"
+            style="margin: 0 8px 8px 0;">
+      <mat-icon>{{c.icon}}</mat-icon>
+      <!-- <span style="font-size: 1.5em; margin-right: 8px;">{{c.icon}}</span> -->
+      {{c.name}}
+    </button>
+    }
+  </section>
   <section id="pra-onde-section">
     <mat-form-field class="pra-onde-field">
       <mat-label>Pra onde iremos dessa vez?</mat-label>
