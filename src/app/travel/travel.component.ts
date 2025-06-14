@@ -10,11 +10,12 @@ import { TravelRequest } from './models/travel.request';
 import { TravelResponse } from './models/travel.response';
 import { DestinosComponent } from './destinos/destinos.component'
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-travel',
   standalone: true,
-  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, DestinosComponent, MatTooltipModule],
+  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, DestinosComponent, MatTooltipModule, CommonModule],
   templateUrl: './travel.component.html',
   styleUrl: './travel.component.css',
 })
