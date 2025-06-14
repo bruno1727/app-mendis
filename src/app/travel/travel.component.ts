@@ -26,10 +26,10 @@ export class TravelComponent {
 
   country: string = '';
   countries = [
-    { name: 'Brasil', icon: 'flag' },
-    { name: 'México', icon: 'flag' },
-    { name: 'Argentina', icon: 'flag' },
-    { name: 'Itália', icon: 'flag' }
+    { name: 'Brasil', icon: 'fi-br' },
+    { name: 'México', icon: 'fi-mx' },
+    { name: 'Argentina', icon: 'fi-ar' },
+    { name: 'Itália', icon: 'fi-it' }
   ];
 
   announcer = inject(LiveAnnouncer);

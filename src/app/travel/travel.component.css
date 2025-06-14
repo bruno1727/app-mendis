@@ -1,19 +1,19 @@
 :host{
   display: flex;
   align-items: center;
-  margin: 30px;
+  margin: 170px;
   flex-flow: wrap;
 }
 
 .pra-onde-field {
-  width: 100%;
-  margin: 10px;
+  margin-right: 10px;
   margin-bottom: 0px;
+  flex-grow: 1;
 }
 
 button.search-btn{
   width: 200px;
-  margin: 5px;
+  height: 56px;
 }
 
 button.clear-btn{
@@ -31,7 +31,6 @@ button.clear-btn .mat-icon{
 
 section#pra-onde-section{
   display: flex;
-  align-items: baseline;
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
@@ -41,13 +40,10 @@ section#destinos-section{
   width: 100%;
 }
 
-.country-label {
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.25em;
-  font-weight: 600;
-  color: #1976d2;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-  margin-right: 1px;
+#travel-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 64.0184px 76.8221px 80px rgba(0, 0, 0, 0.07), 41.4934px 49.7921px 46.8519px rgba(0, 0, 0, 0.0531481), 24.659px 29.5907px 25.4815px rgba(0, 0, 0, 0.0425185), 12.8037px 15.3644px 13px rgba(0, 0, 0, 0.035), 5.21632px 6.25958px 6.51852px rgba(0, 0, 0, 0.0274815), 1.18553px 1.42263px 3.14815px rgba(0, 0, 0, 0.0168519);
+  border-radius: 12px;
+  padding: 25px 25px 3px 25px;
 }

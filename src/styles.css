@@ -3,6 +3,24 @@
 html, body { height: 100%; }
 body { 
   margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
-  background-color: #303030; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url('assets/images/mexico.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: 'MountainsOfChristmas';
+  src: url('assets/fonts/MountainsofChristmas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MountainsOfChristmas';
+  src: url('assets/fonts/MountainsofChristmas-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }

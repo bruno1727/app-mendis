@@ -5,6 +5,8 @@ h1{
   font-size: xxx-large;
   font-weight: 100;
   text-shadow: 1px 1px 3px #323131;
+  font-family: 'MountainsOfChristmas', cursive;
+  font-weight: bold;
 }
 
 span:nth-child(1) {

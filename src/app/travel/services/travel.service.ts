@@ -12,6 +12,6 @@ export class TravelService {
   constructor(private http: HttpClient) { }
 
   search(request: TravelRequest) : Observable<TravelResponse[]>{
-    return this.http.post<TravelResponse[]>('https://localhost:53333/travel', request);
+    return this.http.post<TravelResponse[]>('https://localhost:8082/travel', request);
   }
 }

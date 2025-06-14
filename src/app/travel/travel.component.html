@@ -1,53 +1,50 @@
 <!-- <main> -->
-  <section id="country-section">
-    <span class="country-label">
-      <mat-icon style="vertical-align: middle; margin-right: 6px; color: #1976d2;">public</mat-icon>
-      Escolha o país:
-    </span>
-    @for (c of countries; track c) {
-      <button mat-stroked-button
-            
-            [color]="country === c.name ? 'primary' : undefined"
-            (click)="country = c.name"
-            [class.selected]="country === c.name"
-            style="margin: 0 8px 8px 0;">
-      <mat-icon>{{c.icon}}</mat-icon>
-      <!-- <span style="font-size: 1.5em; margin-right: 8px;">{{c.icon}}</span> -->
-      {{c.name}}
-    </button>
-    }
-  </section>
-  <section id="pra-onde-section">
-    <mat-form-field class="pra-onde-field">
-      <mat-label>Pra onde iremos dessa vez?</mat-label>
-      <mat-chip-grid #chipGrid aria-label="Enter fruits">
-        @for (characteristic of characteristics; track characteristic) {
-          <mat-chip-row
-            (removed)="remove(characteristic)"
-            [editable]="true"
-            (edited)="edit(characteristic, $event)"
-            [aria-description]="'press enter to edit ' + characteristic">
-            {{characteristic}}
-            <button matChipRemove [attr.aria-label]="'remove ' + characteristic">
-              <mat-icon>cancel</mat-icon>
-            </button>
-          </mat-chip-row>
-        }
-        <input placeholder="Palavra-chave"
-               [matChipInputFor]="chipGrid"
-               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-               [matChipInputAddOnBlur]="addOnBlur"
-               (matChipInputTokenEnd)="add($event)"/>
-        <button class="clear-btn" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-chip-grid>
-    </mat-form-field>
-    <button class="search-btn" mat-raised-button color="primary" (click)="search()">
-      <mat-icon>flight_takeoff</mat-icon>
-      Buscar
-    </button>
-  </section>
+  <div id="travel-container">
+    <section id="country-section">
+      @for (c of countries; track c) {
+        <button mat-raised-button            
+              [color]="country === c.name ? 'primary' : undefined"
+              (click)="country = c.name"
+              [class.selected]="country === c.name"
+              style="margin: 0 8px 8px 0;">
+        <!-- <span class="fi fi-us">{{c.icon}}</span> -->
+        <mat-icon fontSet="fi" fontIcon="{{c.icon}}"></mat-icon>
+        {{c.name}}
+      </button>
+      }
+    </section>
+    <section id="pra-onde-section">
+      <mat-form-field class="pra-onde-field">
+        <mat-label>Pra onde iremos dessa vez?</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Enter fruits">
+          @for (characteristic of characteristics; track characteristic) {
+            <mat-chip-row
+              (removed)="remove(characteristic)"
+              [editable]="true"
+              (edited)="edit(characteristic, $event)"
+              [aria-description]="'press enter to edit ' + characteristic">
+              {{characteristic}}
+              <button matChipRemove [attr.aria-label]="'remove ' + characteristic">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+          }
+          <input placeholder="Palavra-chave"
+                 [matChipInputFor]="chipGrid"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)"/>
+          <!-- <button class="clear-btn" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+            <mat-icon>close</mat-icon>
+          </button> -->
+        </mat-chip-grid>
+      </mat-form-field>
+      <button class="search-btn" mat-raised-button color="primary" (click)="search()">
+        <mat-icon>flight_takeoff</mat-icon>
+        Buscar
+      </button>
+    </section>
+  </div>
 
   <section id="destinos-section">
     <app-destinos [destinos]="travels"></app-destinos>
