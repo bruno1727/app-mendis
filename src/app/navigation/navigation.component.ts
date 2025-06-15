@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TitleComponent } from '../title/title.component';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [MatTabsModule, RouterModule, TitleComponent, CommonModule],
+  imports: [MatTabsModule, RouterModule, TitleComponent],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css'
 })

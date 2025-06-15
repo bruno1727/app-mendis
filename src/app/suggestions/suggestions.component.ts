@@ -8,7 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SuggestionsRequest } from './models/suggestions.request';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CommonModule } from '@angular/common';
+
 import { DestinosComponent } from './destinos/destinos.component';
 import { SuggestionsResponse } from './models/suggestions.response';
 import { SuggestionsService } from './services/suggestions.service';
@@ -16,7 +16,7 @@ import { SuggestionsService } from './services/suggestions.service';
 @Component({
   selector: 'app-suggestions',
   standalone: true,
-  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, MatProgressSpinnerModule, DestinosComponent, MatTooltipModule, CommonModule],
+  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, MatProgressSpinnerModule, DestinosComponent, MatTooltipModule],
   templateUrl: './suggestions.component.html',
   styleUrl: './suggestions.component.css',
 })
