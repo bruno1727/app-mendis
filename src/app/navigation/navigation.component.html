@@ -1,0 +1,13 @@
+<app-title></app-title>
+<nav mat-tab-nav-bar class="navigation-tabs" [tabPanel]="tabPanel">
+  @for (link of navLinks; track link) {
+    <a mat-tab-link
+       (click)="onTabClick(link.link)"
+       [active]="activeLink == link.link"> {{link.label}} </a>
+  }
+</nav>
+<mat-tab-nav-panel #tabPanel>
+  <div class="background-container" >
+    <router-outlet></router-outlet>
+  </div>
+</mat-tab-nav-panel>
