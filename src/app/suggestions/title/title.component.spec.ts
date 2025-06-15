@@ -20,4 +20,4 @@ describe('TitleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+}); 

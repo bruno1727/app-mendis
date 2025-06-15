@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TravelComponent } from './travel.component';
+import { SuggestionsComponent } from './suggestions.component';
 
-describe('TravelComponent', () => {
-  let component: TravelComponent;
-  let fixture: ComponentFixture<TravelComponent>;
+describe('SuggestionsComponent', () => {
+  let component: SuggestionsComponent;
+  let fixture: ComponentFixture<SuggestionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TravelComponent]
+      imports: [SuggestionsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TravelComponent);
+    fixture = TestBed.createComponent(SuggestionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +20,4 @@ describe('TravelComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+}); 

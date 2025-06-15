@@ -5,25 +5,25 @@ import { MatChipEditedEvent, MatChipInputEvent, MatChipsModule } from '@angular/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { TravelService } from './services/travel.service';
-import { TravelRequest } from './models/travel.request';
-import { TravelResponse } from './models/travel.response';
-import { DestinosComponent } from './destinos/destinos.component'
+import { SuggestionsRequest } from './models/suggestions.request';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
+import { DestinosComponent } from './destinos/destinos.component';
+import { SuggestionsResponse } from './models/suggestions.response';
+import { SuggestionsService } from './services/suggestions.service';
 
 @Component({
-  selector: 'app-travel',
+  selector: 'app-suggestions',
   standalone: true,
   imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, DestinosComponent, MatTooltipModule, CommonModule],
-  templateUrl: './travel.component.html',
-  styleUrl: './travel.component.css',
+  templateUrl: './suggestions.component.html',
+  styleUrl: './suggestions.component.css',
 })
-export class TravelComponent {
+export class SuggestionsComponent {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   characteristics: string[] = [];
-  travels: TravelResponse[] = [];
+  suggestions: SuggestionsResponse[] = [];
 
   country: string = '';
   countries = [
@@ -35,7 +35,7 @@ export class TravelComponent {
 
   announcer = inject(LiveAnnouncer);
 
-  constructor(private service: TravelService) { }
+  constructor(private service: SuggestionsService) { }
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
@@ -80,8 +80,8 @@ export class TravelComponent {
       {
         country: this.country,
         characteristics: this.characteristics
-      } as TravelRequest).subscribe(data => {
-      this.travels = data;
+      } as SuggestionsRequest).subscribe(data => {
+      this.suggestions = data;
     });
   }
-}
+} 

@@ -1,5 +1,5 @@
 <!-- <main> -->
-  <div id="travel-container" class="background-container">
+  <div id="suggestions-container" class="background-container">
     <section id="country-section">
       @for (c of countries; track c) {
         <button mat-raised-button            
@@ -46,7 +46,7 @@
     </section>
   </div>
 
-  <section id="destinos-section" class="background-container" *ngIf="travels && travels.length > 0">
-    <app-destinos [destinos]="travels"></app-destinos>
+  <section id="destinos-section" class="background-container" *ngIf="suggestions && suggestions.length > 0">
+    <app-destinos [destinos]="suggestions"></app-destinos>
   </section>
-<!-- </main> -->
+<!-- </main> --> 

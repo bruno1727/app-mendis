@@ -1,5 +1,5 @@
-export class TravelResponse {
+export class SuggestionsResponse {
   cidade!: string;
   regiao!: string;
   caracteristicas!: string;
-}
+} 
