@@ -10,9 +10,25 @@
   flex-grow: 1;
 }
 
-button.search-btn{
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   width: 200px;
   height: 56px;
+}
+
+button.search-btn{  
+  height: 100%;
+}
+
+button.search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  margin-left: 10px;
 }
 
 button.clear-btn{

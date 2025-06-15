@@ -39,10 +39,19 @@
           </button> -->
         </mat-chip-grid>
       </mat-form-field>
-      <button class="search-btn" mat-raised-button color="primary" (click)="search()">
-        <mat-icon>flight_takeoff</mat-icon>
-        Buscar
-      </button>
+      <div class="search-section">
+        <button class="search-btn" 
+                mat-raised-button 
+                color="primary" 
+                (click)="search()"
+                [disabled]="isLoading">
+          <mat-icon>flight_takeoff</mat-icon>
+          Buscar
+        </button>
+        @if (isLoading) {
+          <mat-spinner diameter="30" class="loading-spinner"></mat-spinner>
+        }
+      </div>
     </section>
   </div>
 

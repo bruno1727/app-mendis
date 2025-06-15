@@ -5,6 +5,7 @@ import { MatChipEditedEvent, MatChipInputEvent, MatChipsModule } from '@angular/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SuggestionsRequest } from './models/suggestions.request';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,7 @@ import { SuggestionsService } from './services/suggestions.service';
 @Component({
   selector: 'app-suggestions',
   standalone: true,
-  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, DestinosComponent, MatTooltipModule, CommonModule],
+  imports: [MatFormFieldModule, MatChipsModule, MatIconModule, MatButtonModule, MatProgressSpinnerModule, DestinosComponent, MatTooltipModule, CommonModule],
   templateUrl: './suggestions.component.html',
   styleUrl: './suggestions.component.css',
 })
@@ -24,6 +25,7 @@ export class SuggestionsComponent {
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   characteristics: string[] = [];
   suggestions: SuggestionsResponse[] = [];
+  isLoading = false;
 
   country: string = '';
   countries = [
@@ -76,12 +78,20 @@ export class SuggestionsComponent {
   }
 
   search(){
+    this.isLoading = true;
     this.service.search(
       {
         country: this.country,
         characteristics: this.characteristics
-      } as SuggestionsRequest).subscribe(data => {
-      this.suggestions = data;
-    });
+      } as SuggestionsRequest).subscribe({
+        next: (data) => {
+          this.suggestions = data;
+          this.isLoading = false;
+        },
+        error: (error) => {
+          console.error('Erro na busca:', error);
+          this.isLoading = false;
+        }
+      });
   }
 } 
