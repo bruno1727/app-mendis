@@ -1,3 +1,15 @@
-div {
+div.app-container {
   margin: 170px 170px 0px 170px;
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/mexico_header.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
